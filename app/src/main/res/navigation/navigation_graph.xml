@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/notListesiFragment">
+
+    <fragment
+        android:id="@+id/notListesiFragment"
+        android:name="com.zeyneparslan.notuygulamasi.NotListesiFragment"
+        android:label="fragment_not_listesi"
+        tools:layout="@layout/fragment_not_listesi" >
+        <action
+            android:id="@+id/action_notListesiFragment_to_tumAyrintilarFragment"
+            app:destination="@id/tumAyrintilarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tumAyrintilarFragment"
+        android:name="com.zeyneparslan.notuygulamasi.TumAyrintilarFragment"
+        android:label="fragment_tum_ayrintilar"
+        tools:layout="@layout/fragment_tum_ayrintilar" >
+        <action
+            android:id="@+id/action_tumAyrintilarFragment_to_notListesiFragment"
+            app:destination="@id/notListesiFragment" />
+        <argument
+            android:name="bilgi"
+            app:argType="string"
+            android:defaultValue="menudengeldim" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
